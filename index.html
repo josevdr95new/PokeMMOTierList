@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeMMO Tier List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PokeMMO Tier List</h1>
+            <div class="last-updated" id="last-updated"></div>
+        </header>
+        
+        <div class="filters">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search Pokémon...">
+            </div>
+            <div class="tier-filters">
+                <button class="filter-btn active" data-tier="all">All</button>
+                <button class="filter-btn" data-tier="ubers">Ubers</button>
+                <button class="filter-btn" data-tier="ou">OU</button>
+                <button class="filter-btn" data-tier="uu">UU</button>
+                <button class="filter-btn" data-tier="nu">NU</button>
+                <button class="filter-btn" data-tier="untiered">Untiered</button>
+            </div>
+            <div class="sort-options">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="id">ID</option>
+                    <option value="name">Name</option>
+                    <option value="win">Win %</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="tier-stats">
+                <div class="stat-item" id="total-count">
+                    <span class="stat-label">Total</span>
+                    <span class="stat-value">0</span>
+                </div>
+                <div class="stat-item" id="ubers-count">
+                    <span class="stat-label">Ubers</span>
+                    <span class="stat-value">0</span>
+                </div>
+                <div class="stat-item" id="ou-count">
+                    <span class="stat-label">OU</span>
+                    <span class="stat-value">0</span>
+                </div>
+                <div class="stat-item" id="uu-count">
+                    <span class="stat-label">UU</span>
+                    <span class="stat-value">0</span>
+                </div>
+                <div class="stat-item" id="nu-count">
+                    <span class="stat-label">NU</span>
+                    <span class="stat-value">0</span>
+                </div>
+                <div class="stat-item" id="untiered-count">
+                    <span class="stat-label">Untiered</span>
+                    <span class="stat-value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="pokeball"></div>
+            <p>Loading Pokémon data...</p>
+        </div>
+        
+        <div class="pokemon-grid" id="pokemon-grid"></div>
+        
+        <div class="pokemon-modal" id="pokemon-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body" id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Data from <a href="https://pokemmotiers-api.josevdr95.workers.dev/" target="_blank">PokeMMO Tiers API</a> and <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
